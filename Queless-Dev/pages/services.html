@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover services and check estimated waiting times with QueueLess.">
+    <title>Find a Service | QueueLess</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/services.css">
+</head>
+
+<body data-page="services">
+
+    <header id="site-header"></header>
+
+    <main class="page-content">
+
+        <section class="services-hero">
+            <div class="container">
+                <span class="eyebrow">SERVICE DISCOVERY</span>
+
+                <h1>Find services.<br>
+                    <span>Skip unnecessary waiting.</span>
+                </h1>
+
+                <p>
+                    Explore essential services, check estimated waiting times
+                    and make smarter decisions before leaving home.
+                </p>
+
+                <div class="services-search">
+                    <span aria-hidden="true">⌕</span>
+                    <input
+                        type="search"
+                        id="service-search"
+                        placeholder="Search hospitals, banks, government offices..."
+                        aria-label="Search services"
+                    >
+                </div>
+
+                <small class="data-notice">
+                    Demo environment — queue figures are simulated.
+                </small>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+
+                <div class="services-heading">
+                    <div>
+                        <span class="eyebrow">EXPLORE</span>
+                        <h2>Available services</h2>
+                        <p>Choose a category or search for a service.</p>
+                    </div>
+
+                    <span id="service-count" class="service-count"></span>
+                </div>
+
+                <div class="category-filters" id="category-filters">
+                    <button class="filter-btn active" data-category="all">
+                        All services
+                    </button>
+
+                    <button class="filter-btn" data-category="healthcare">
+                        Healthcare
+                    </button>
+
+                    <button class="filter-btn" data-category="government">
+                        Government
+                    </button>
+
+                    <button class="filter-btn" data-category="banking">
+                        Banking
+                    </button>
+
+                    <button class="filter-btn" data-category="education">
+                        Education
+                    </button>
+
+                    <button class="filter-btn" data-category="utilities">
+                        Utilities
+                    </button>
+
+                    <button class="filter-btn" data-category="pharmacy">
+                        Pharmacy
+                    </button>
+                </div>
+
+                <div class="services-grid" id="services-grid">
+                    <!-- Service cards will be generated with JavaScript -->
+                </div>
+
+                <div class="empty-state" id="empty-state" hidden>
+                    <h3>No services found</h3>
+                    <p>Try another search term or select a different category.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="site-footer"></footer>
+
+    <script src="JS/services.js"></script>
+
+    <script type="module" src="../js/app.js"></script>
+
+</body>
+</html>

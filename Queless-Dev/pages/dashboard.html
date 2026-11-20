@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="QueueLess service provider dashboard">
+
+    <title>Provider Dashboard | QueueLess</title>
+
+    <!-- Main stylesheets -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body data-page="dashboard">
+
+    <!-- Main Navigation -->
+    <header id="site-header"></header>
+
+    <main id="app" class="page-content dashboard-page">
+
+        <div class="dashboard-layout">
+
+            <!-- DASHBOARD SIDEBAR -->
+            <aside class="dashboard-sidebar">
+
+                <div class="sidebar-heading">
+                    <span class="sidebar-label">WORKSPACE</span>
+                </div>
+
+                <nav class="dashboard-nav" aria-label="Dashboard navigation">
+
+                    <a href="#overview" class="dashboard-nav-link active">
+                        <span class="nav-icon">◫</span>
+                        <span>Overview</span>
+                    </a>
+
+                    <a href="#service-monitoring" class="dashboard-nav-link">
+                        <span class="nav-icon">▤</span>
+                        <span>Service Management</span>
+                    </a>
+
+                    <a href="#analytics" class="dashboard-nav-link">
+                        <span class="nav-icon">▥</span>
+                        <span>Analytics</span>
+                    </a>
+
+                    <a href="#community-reports" class="dashboard-nav-link">
+                        <span class="nav-icon">◎</span>
+                        <span>Community Reports</span>
+                    </a>
+
+                </nav>
+
+                <div class="sidebar-bottom">
+
+                    <div class="sidebar-help">
+                        <span class="help-icon">?</span>
+
+                        <div>
+                            <strong>Need assistance?</strong>
+                            <p>Learn how QueueLess works.</p>
+                        </div>
+
+                    </div>
+
+                    <a href="./about.html" class="sidebar-about-link">
+                        About QueueLess
+                    </a>
+
+                </div>
+
+            </aside>
+
+
+            <!-- DASHBOARD MAIN CONTENT -->
+            <div class="dashboard-main">
+
+                <!-- DASHBOARD HEADER -->
+                <section class="dashboard-header" id="overview">
+
+                    <div>
+                        <span class="eyebrow">SERVICE MANAGEMENT</span>
+
+                        <h1>Provider Overview</h1>
+
+                        <p>
+                            Monitor service conditions, manage queues
+                            and keep your community informed.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-header-actions">
+
+<div class="dashboard-date">
+    <span id="dashboard-date"></span>
+    <small id="dashboard-last-refreshed">
+        Waiting for refresh...
+    </small>
+</div>
+                        <a href="./report.html" class="btn btn-primary">
+                            View Reports
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- KPI STATISTICS -->
+                <section class="dashboard-stats" id="dashboard-stats">
+
+                    <article class="stat-card">
+                        <div class="stat-card-top">
+                            <span class="stat-label">Listed Services</span>
+                            <span class="stat-icon">▤</span>
+                        </div>
+
+                        <h2 id="total-services">0</h2>
+
+                        <p>Services being monitored</p>
+                    </article>
+
+
+                    <article class="stat-card">
+                        <div class="stat-card-top">
+                            <span class="stat-label">Active Queue Tickets</span>
+                            <span class="stat-icon">◷</span>
+                        </div>
+
+                        <h2 id="active-queues">0</h2>
+
+                        <p>Tickets saved in this browser</p>
+                    </article>
+
+
+                    <article class="stat-card">
+                        <div class="stat-card-top">
+                            <span class="stat-label">Average Waiting Time</span>
+                            <span class="stat-icon">◴</span>
+                        </div>
+
+                        <h2 id="average-wait">0 min</h2>
+
+                        <p>Across listed services</p>
+                    </article>
+
+
+                    <article class="stat-card">
+                        <div class="stat-card-top">
+                            <span class="stat-label">Community Reports</span>
+                            <span class="stat-icon">◎</span>
+                        </div>
+
+                        <h2 id="total-reports">0</h2>
+
+                        <p>Submitted observations</p>
+                    </article>
+
+                </section>
+
+
+                <!-- ANALYTICS SECTION -->
+                <section class="dashboard-panel analytics-panel" id="analytics">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <span class="eyebrow">SERVICE INTELLIGENCE</span>
+
+                            <h2>Service Performance</h2>
+
+                            <p>
+                                Understand congestion and waiting-time
+                                patterns across monitored services.
+                            </p>
+                        </div>
+
+                        <span class="demo-badge">Demo data</span>
+
+                    </div>
+
+                    <div class="analytics-placeholder">
+                        <div class="placeholder-icon">▥</div>
+
+                        <h3>Service analytics</h3>
+
+                        <p>
+                            Visual congestion and waiting-time analytics
+                            will appear here.
+                        </p>
+                    </div>
+
+                </section>
+
+
+                <!-- SERVICE MANAGEMENT -->
+                <section class="dashboard-panel" id="service-monitoring">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <span class="eyebrow">OPERATIONS</span>
+
+                            <h2>Service Monitoring</h2>
+
+                            <p>
+                                Update the current conditions of your services.
+                            </p>
+                        </div>
+
+                        <span class="live-indicator">
+                            <span></span>
+                            Demo environment
+                        </span>
+
+                    </div>
+
+                    <div id="service-management" class="service-management"></div>
+
+                </section>
+
+
+
+<!-- RECENT ACTIVITY -->
+<section class="dashboard-panel" id="recent-activity">
+
+    <div class="panel-heading">
+        <div>
+            <span class="eyebrow">LIVE MONITORING</span>
+
+            <h2>Recent Activity</h2>
+
+            <p>
+                Follow recent service updates and community submissions.
+            </p>
+        </div>
+
+        <span class="live-indicator">
+            <span></span>
+            Activity log
+        </span>
+    </div>
+
+    <div id="dashboard-activity" class="dashboard-activity">
+
+        <div class="dashboard-empty">
+            <h3>No activity yet</h3>
+            <p>New service updates will appear here.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+                <!-- COMMUNITY REPORTS -->
+                <section class="dashboard-panel" id="community-reports">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <span class="eyebrow">COMMUNITY FEEDBACK</span>
+
+                            <h2>Recent Reports</h2>
+
+                            <p>
+                                Review observations submitted by users.
+                            </p>
+                        </div>
+
+                        <a href="report.html" class="btn btn-outline btn-sm">
+                            View reporting page
+                        </a>
+
+                    </div>
+
+                    <div id="dashboard-reports" class="dashboard-reports"></div>
+
+                </section>
+
+
+                <!-- PROTOTYPE NOTICE -->
+                <div class="dashboard-notice">
+
+                    <strong>Prototype notice:</strong>
+
+                    Dashboard information is currently stored locally
+                    in this browser. Information is simulated and is
+                    not connected to real service providers or a shared
+                    live database.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Main Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Application entry point -->
+
+    <script type="module" src="JS/app.js"></script>
+        <script type="module" src="../js/app.js"></script>
+
+
+</body>
+
+</html>

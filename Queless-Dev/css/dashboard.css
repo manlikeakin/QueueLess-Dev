@@ -1,0 +1,1103 @@
+
+/* ==========================================
+   QUEUELESS PROVIDER DASHBOARD
+   Main dashboard layout
+========================================== */
+
+.dashboard-page {
+    background: var(--background);
+    min-height: 100vh;
+}
+
+/* ==========================================
+   DASHBOARD WORKSPACE LAYOUT
+========================================== */
+
+.dashboard-layout {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    gap: 32px;
+    padding: 32px 40px 60px;
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.dashboard-sidebar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 25px 16px;
+    min-height: 650px;
+    height: fit-content;
+    position: sticky;
+    top: 95px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-heading {
+    padding: 0 12px;
+    margin-bottom: 20px;
+}
+
+.sidebar-label {
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: var(--text-muted);
+}
+
+.dashboard-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.dashboard-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 12px;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: .88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.dashboard-nav-link:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.dashboard-nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.nav-icon {
+    width: 23px;
+    height: 23px;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 35px;
+}
+
+.sidebar-help {
+    padding: 15px 12px;
+    background: var(--background);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.help-icon {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.sidebar-help strong {
+    display: block;
+    color: var(--navy);
+    font-size: .78rem;
+}
+
+.sidebar-help p {
+    color: var(--text-muted);
+    font-size: .7rem;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.sidebar-about-link {
+    display: block;
+    padding: 18px 12px 5px;
+    color: var(--text-secondary);
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.sidebar-about-link:hover {
+    color: var(--primary);
+}
+
+/* ==========================================
+   MAIN DASHBOARD CONTENT
+========================================== */
+
+.dashboard-main {
+    min-width: 0;
+}
+
+/* ==========================================
+   DASHBOARD HEADER
+========================================== */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.dashboard-header .eyebrow {
+    color: var(--primary);
+    font-size: .7rem;
+}
+
+.dashboard-header h1 {
+    color: var(--navy);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin: 8px 0;
+    letter-spacing: -1px;
+}
+
+.dashboard-header p {
+    color: var(--text-secondary);
+    font-size: .9rem;
+    line-height: 1.6;
+    max-width: 550px;
+}
+
+.dashboard-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.dashboard-date {
+    color: var(--text-secondary);
+    font-size: .82rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   KPI STATISTICS
+========================================== */
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 21px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    min-width: 0;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: .77rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.stat-icon {
+    width: 37px;
+    height: 37px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 1.15rem;
+}
+
+.stat-card h2 {
+    color: var(--navy);
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    margin: 18px 0 5px;
+    letter-spacing: -1px;
+    font-weight: 800;
+}
+
+.stat-card p {
+    color: var(--text-muted);
+    font-size: .72rem;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   DASHBOARD PANELS
+========================================== */
+
+.dashboard-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-sm);
+    min-width: 0;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.panel-heading .eyebrow {
+    font-size: .68rem;
+    letter-spacing: 1.2px;
+}
+
+.panel-heading h2 {
+    color: var(--navy);
+    font-size: 1.3rem;
+    margin: 6px 0;
+    letter-spacing: -.4px;
+}
+
+.panel-heading p {
+    color: var(--text-secondary);
+    font-size: .82rem;
+    line-height: 1.6;
+}
+
+/* Demo badge */
+
+.demo-badge {
+    padding: 7px 12px;
+    background: var(--warning-light);
+    color: #92400E;
+    border-radius: var(--radius-full);
+    font-size: .7rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   ANALYTICS PLACEHOLDER
+========================================== */
+
+.analytics-placeholder {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 15px;
+    background: var(--background);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-md);
+}
+
+.placeholder-icon {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+}
+
+.analytics-placeholder h3 {
+    color: var(--navy);
+    font-size: 1rem;
+    margin-bottom: 7px;
+}
+
+.analytics-placeholder p {
+    color: var(--text-muted);
+    font-size: .82rem;
+    max-width: 350px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   SERVICE MANAGEMENT
+========================================== */
+
+.service-management {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.managed-service {
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: #FCFDFF;
+    transition: var(--transition-fast);
+}
+
+.managed-service:hover {
+    border-color: #BFDBFE;
+    box-shadow: var(--shadow-sm);
+}
+
+.managed-service-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.managed-service-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--primary-light);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.managed-service-info h3 {
+    color: var(--navy);
+    font-size: .98rem;
+    font-weight: 700;
+}
+
+.managed-service-info p {
+    color: var(--text-muted);
+    font-size: .8rem;
+    margin: 4px 0 8px;
+}
+
+/* Service status badges */
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: var(--radius-full);
+    font-size: .68rem;
+    font-weight: 700;
+}
+
+.status-low {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.status-moderate {
+    background: var(--warning-light);
+    color: #A16207;
+}
+
+.status-busy,
+.status-closed {
+    background: var(--danger-light);
+    color: var(--danger);
+}
+
+/* Service update form */
+
+.service-update-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    gap: 13px;
+    align-items: end;
+}
+
+.service-update-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: .75rem;
+    font-weight: 600;
+    min-width: 0;
+}
+
+.service-update-form input,
+.service-update-form select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: .82rem;
+    transition: var(--transition-fast);
+}
+
+.service-update-form input:focus,
+.service-update-form select:focus {
+    border-color: var(--primary);
+    outline: 3px solid var(--primary-light);
+}
+
+.service-update-form button {
+    white-space: nowrap;
+}
+
+/* ==========================================
+   COMMUNITY REPORTS
+========================================== */
+
+.dashboard-reports {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-report {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 19px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.dashboard-report:first-child {
+    padding-top: 0;
+}
+
+.dashboard-report:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.dashboard-report h3 {
+    color: var(--navy);
+    font-size: .9rem;
+    margin-bottom: 5px;
+}
+
+.dashboard-report span:not(.unverified-badge) {
+    color: var(--primary);
+    font-size: .75rem;
+    font-weight: 600;
+}
+
+.dashboard-report p {
+    color: var(--text-secondary);
+    font-size: .83rem;
+    line-height: 1.6;
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+.dashboard-report small {
+    color: var(--text-muted);
+    font-size: .72rem;
+}
+
+.unverified-badge {
+    flex-shrink: 0;
+    padding: 6px 11px;
+    background: var(--warning-light);
+    color: #92400E;
+    border-radius: var(--radius-full);
+    font-size: .68rem;
+    font-weight: 700;
+}
+
+/* Empty reports */
+
+.dashboard-empty {
+    padding: 35px 15px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.dashboard-empty h3 {
+    color: var(--navy);
+    margin-bottom: 7px;
+    font-size: 1rem;
+}
+
+.dashboard-empty p {
+    font-size: .82rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   PROTOTYPE NOTICE
+========================================== */
+
+.dashboard-notice {
+    padding: 17px 20px;
+    background: var(--primary-light);
+    color: var(--text-secondary);
+    border: 1px solid #DBEAFE;
+    border-radius: var(--radius-md);
+    font-size: .8rem;
+    line-height: 1.7;
+}
+
+.dashboard-notice strong {
+    color: var(--navy);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 1200px) {
+
+    .dashboard-layout {
+        grid-template-columns: 210px minmax(0, 1fr);
+        gap: 22px;
+        padding: 25px 22px 45px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-update-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-update-form button {
+        width: fit-content;
+    }
+}
+
+/* Tablets */
+
+@media (max-width: 768px) {
+
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 22px 18px 40px;
+    }
+
+    .dashboard-sidebar {
+        position: static;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .sidebar-heading,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .dashboard-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+        scrollbar-width: thin;
+        padding-bottom: 3px;
+    }
+
+    .dashboard-nav-link {
+        flex-shrink: 0;
+        padding: 11px 13px;
+        font-size: .78rem;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .dashboard-header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Mobile devices */
+
+@media (max-width: 576px) {
+
+    .dashboard-layout {
+        padding: 18px 13px 35px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-label {
+        font-size: .7rem;
+    }
+
+    .stat-icon {
+        width: 31px;
+        height: 31px;
+        font-size: 1rem;
+    }
+
+    .stat-card h2 {
+        font-size: 1.5rem;
+        margin: 13px 0 5px;
+    }
+
+    .stat-card p {
+        font-size: .67rem;
+    }
+
+    .dashboard-panel {
+        padding: 18px 15px;
+        margin-bottom: 18px;
+    }
+
+    .panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .panel-heading h2 {
+        font-size: 1.15rem;
+    }
+
+    .dashboard-nav-link {
+        font-size: .73rem;
+        padding: 10px 11px;
+    }
+
+    .service-update-form {
+        grid-template-columns: 1fr;
+    }
+
+    .service-update-form button {
+        width: 100%;
+    }
+
+    .managed-service {
+        padding: 16px;
+    }
+
+    .managed-service-info {
+        align-items: flex-start;
+    }
+
+    .dashboard-report {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dashboard-header-actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-header-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dashboard-date {
+        font-size: .78rem;
+    }
+
+    .analytics-placeholder {
+        min-height: 190px;
+    }
+
+    .dashboard-notice {
+        font-size: .75rem;
+        padding: 14px;
+    }
+}
+
+/* Very small phones */
+
+@media (max-width: 360px) {
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-layout {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .stat-card {
+        padding: 17px;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .stat-card,
+    .dashboard-nav-link,
+    .managed-service {
+        transition: none;
+    }
+
+    .stat-card:hover {
+        transform: none;
+    }
+}
+
+
+
+/* ==========================================
+   DASHBOARD ANALYTICS
+========================================== */
+
+.analytics-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.analytics-section-heading h3,
+.analytics-panel-heading h4 {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.analytics-section-heading h3 {
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+}
+
+.analytics-section-heading p,
+.analytics-panel-heading p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.analytics-panel {
+    min-width: 0;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.analytics-panel-heading {
+    margin-bottom: 24px;
+}
+
+.analytics-panel-heading h4 {
+    font-size: 0.98rem;
+    margin-bottom: 5px;
+}
+
+.analytics-panel-heading p {
+    line-height: 1.5;
+}
+
+/* Congestion chart */
+
+.congestion-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.congestion-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px;
+    gap: 9px 14px;
+    align-items: center;
+}
+
+.chart-label {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.chart-label strong {
+    font-size: 0.88rem;
+    color: var(--text-primary);
+}
+
+.chart-status {
+    font-size: 0.84rem;
+    font-weight: 600;
+}
+
+.chart-status.status-low {
+    color: var(--success);
+}
+
+.chart-status.status-moderate {
+    color: #B77908;
+}
+
+.chart-status.status-busy {
+    color: var(--danger);
+}
+
+.chart-status.status-closed {
+    color: var(--text-muted);
+}
+
+.chart-track {
+    width: 100%;
+    height: 9px;
+    overflow: hidden;
+    background: #EEF2F8;
+    border-radius: var(--radius-full);
+}
+
+.chart-fill {
+    height: 100%;
+    border-radius: inherit;
+    transition: width var(--transition-normal);
+}
+
+.fill-low {
+    background: var(--success);
+}
+
+.fill-moderate {
+    background: var(--warning);
+}
+
+.fill-busy {
+    background: var(--danger);
+}
+
+.fill-closed {
+    background: #94A3B8;
+}
+
+.chart-percentage {
+    text-align: right;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Waiting-time comparison */
+
+.waiting-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.waiting-row {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.waiting-row-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.waiting-row-heading span {
+    min-width: 0;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    font-weight: 500;
+}
+
+.waiting-row-heading strong {
+    flex-shrink: 0;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+}
+
+.waiting-track {
+    height: 10px;
+}
+
+.fill-waiting {
+    background: linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--primary)
+    );
+}
+
+/* Performance overview */
+
+.performance-panel {
+    width: 100%;
+}
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.performance-card {
+    min-width: 0;
+    padding: 18px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.performance-card > span {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.performance-card strong {
+    display: block;
+    color: var(--navy);
+    font-size: 1.65rem;
+    font-weight: 750;
+    margin-bottom: 7px;
+}
+
+.performance-card p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.analytics-empty {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    padding: 12px 0;
+}
+
+.analytics-disclaimer {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+/* Analytics responsive layout */
+
+@media (max-width: 1100px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .analytics-panel {
+        padding: 18px;
+    }
+
+    .performance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .analytics-content {
+        gap: 18px;
+    }
+
+    .analytics-panel {
+        padding: 15px;
+    }
+
+    .performance-card strong {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+/* ==========================================
+   SERVICE UPDATE TIMESTAMPS
+========================================== */
+
+.service-last-updated {
+    margin-top: 9px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.service-last-updated span {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* ==========================================
+   SERVICE UPDATE FEEDBACK
+========================================== */
+
+.service-update-feedback {
+    min-height: 18px;
+    margin-top: 2px;
+    color: var(--success);
+    font-size: 0.78rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.service-update-feedback.is-visible {
+    opacity: 1;
+}
+
+.service-update-form button:disabled {
+    opacity: 0.75;
+    cursor: default;
+}

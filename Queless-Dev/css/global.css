@@ -1,0 +1,123 @@
+
+/* =========================================
+   GLOBAL APPLICATION STYLES
+========================================= */
+
+body {
+    font-family: var(--font-primary);
+    background: var(--background);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    overflow-x: hidden;
+}
+
+/* MAIN CONTENT CONTAINER */
+
+.container {
+    width: min(100% - 40px, var(--container-width));
+    margin-inline: auto;
+}
+
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 2.75rem);
+}
+
+h3 {
+    font-size: var(--text-2xl);
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+small {
+    font-size: var(--text-sm);
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding-block: var(--space-16);
+}
+
+.section-heading {
+    margin-bottom: var(--space-8);
+}
+
+.section-heading p {
+    margin-top: var(--space-3);
+    max-width: 650px;
+}
+
+/* TEXT UTILITIES */
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* LINKS */
+
+.link {
+    color: var(--primary);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.link:hover {
+    color: var(--primary-dark);
+}
+
+/* PAGE ANIMATION */
+
+.page-content {
+    animation: pageEnter 0.4s ease both;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

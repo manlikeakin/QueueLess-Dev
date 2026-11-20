@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share service conditions and help others make smarter decisions with QueueLess.">
+    <title>Community Report | QueueLess</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/report.css">
+</head>
+
+<body data-page="report">
+
+    <header id="site-header"></header>
+
+    <main class="page-content report-page">
+        <div class="container">
+
+            <section class="report-heading">
+                <span class="eyebrow">COMMUNITY INTELLIGENCE</span>
+                <h1>Help others make <span>smarter decisions.</span></h1>
+                <p>
+                    Share what you observe at a service location.
+                    Your report can help other people plan their visits.
+                </p>
+            </section>
+
+            <div class="report-layout">
+
+                <section class="report-form-card">
+                    <h2>Submit a service report</h2>
+                    <p class="form-intro">
+                        Tell us what is happening at the service location.
+                    </p>
+
+                    <form id="report-form">
+
+                        <div class="form-group">
+                            <label for="report-service">Select a service</label>
+                            <select id="report-service" name="service" required>
+                                <option value="">Choose a service</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="report-type">What would you like to report?</label>
+                            <select id="report-type" name="type" required>
+                                <option value="">Select report type</option>
+                                <option value="long_queue">Unusually long queue</option>
+                                <option value="temporarily_closed">Service temporarily closed</option>
+                                <option value="service_delay">Service delays</option>
+                                <option value="low_crowd">Low crowd / short queue</option>
+                                <option value="other">Other observation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="report-details">Additional details</label>
+                            <textarea
+                                id="report-details"
+                                name="details"
+                                rows="5"
+                                maxlength="500"
+                                placeholder="Describe what you observed..."
+                                required
+                            ></textarea>
+                            <small>Maximum 500 characters.</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary report-submit">
+                            Submit report
+                        </button>
+
+                        <p id="report-feedback" class="report-feedback" role="status" aria-live="polite"></p>
+
+                    </form>
+                </section>
+
+                <aside class="report-info-card">
+                    <div class="report-info-icon">💡</div>
+                    <h2>Your observation matters</h2>
+                    <p>
+                        A simple update from someone at a service location
+                        can help another person avoid an unnecessary journey.
+                    </p>
+
+                    <div class="report-guideline">
+                        <h3>Before submitting</h3>
+                        <ul>
+                            <li>Choose the correct service location.</li>
+                            <li>Share only what you personally observed.</li>
+                            <li>Avoid sharing private or sensitive information.</li>
+                            <li>Keep your description clear and respectful.</li>
+                        </ul>
+                    </div>
+
+                    <p class="report-disclaimer">
+                        Community reports are unverified submissions.
+                        They should not be treated as official service updates.
+                    </p>
+                </aside>
+
+            </div>
+
+            <section class="recent-reports-section">
+                <div class="recent-reports-heading">
+                    <div>
+                        <span class="eyebrow">COMMUNITY ACTIVITY</span>
+                        <h2>Recent reports</h2>
+                    </div>
+                    <span id="report-count" class="service-count"></span>
+                </div>
+
+                <div id="recent-reports" class="recent-reports-list">
+                    <!-- Recent reports will be rendered here -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer id="site-footer"></footer>
+
+    <script type="module" src="../js/app.js"></script>
+    <script src="JS/report.js"></script>
+    <script src="JS/storage.js"></script>
+</body>
+</html>

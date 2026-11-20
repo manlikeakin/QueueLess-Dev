@@ -1,0 +1,148 @@
+
+/* =========================================
+   RESPONSIVE DESIGN FRAMEWORK
+========================================= */
+
+/* TABLETS */
+
+@media (min-width: 576px) {
+
+    .container {
+        width: min(100% - 48px, var(--container-width));
+    }
+
+}
+
+/* LAPTOPS */
+
+@media (min-width: 992px) {
+
+    .container {
+        width: min(100% - 64px, var(--container-width));
+    }
+
+}
+
+/* LARGE DESKTOPS */
+
+@media (min-width: 1200px) {
+
+    .section {
+        padding-block: 5rem;
+    }
+
+}
+
+/* SMALL MOBILE DEVICES */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: min(100% - 28px, var(--container-width));
+    }
+
+    .btn {
+        padding: 10px 16px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE NAVIGATION
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 68px;
+    }
+
+    .brand-logo {
+        height: 42px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 68px;
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: var(--space-4) 20px var(--space-6);
+
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition: all var(--transition-normal);
+    }
+
+    .nav-menu.open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        padding: 14px 4px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-link.active::after {
+        display: none;
+    }
+
+    .nav-cta {
+        margin: var(--space-4) 0 0;
+    }
+
+    /* MOBILE FOOTER */
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* VERY SMALL DEVICES */
+
+@media (max-width: 400px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+}
